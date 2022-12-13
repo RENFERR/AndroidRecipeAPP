@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_main_light" >#FF5f91d1</color>
+    <color name="color_main"       >#FF346DB6</color>
+    <color name="color_main_dark"  >#FF1E3D66</color>
+    <color name="color_main_shade1">#FF4691F2</color>
+    <color name="color_main_shade2">#FF4389E6</color>
+    <color name="color_main_shade3">#FF3B7ACC</color>
+    <color name="color_main_shade4">#FF3167AC</color>
+    <color name="black">#FF000000</color>
+    <color name="black_text">#202020</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_recipe_title">#FF3167AC</color>
+</resources>
