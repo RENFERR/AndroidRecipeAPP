@@ -24,7 +24,7 @@ object Validation {
         return if (login.count() >= 3) {
             val dataBase = MainBD.getDb(context)
             val isLoginExist = runBlocking {
-                !dataBase.getDao().isLoginExist(login).isNullOrEmpty()
+                !dataBase.getUserDao().isLoginExist(login).isNullOrEmpty()
             }
             if (isLoginExist) {
                 ValidationMessage(false, "Такой логин уже существует")

@@ -3,11 +3,8 @@ package com.example.coursework.pages.authorization
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.coursework.database.DatabaseMethods.deleteUserType
-import com.example.coursework.database.DatabaseMethods.getUserFromDB
-import com.example.coursework.database.model.users.UserTypes
+import com.example.coursework.database.DatabaseUserMethods.getUserFromDB
 import com.example.coursework.databinding.ActivityLoginBinding
-import com.example.coursework.helpers.Constants
 import com.example.coursework.helpers.Constants.authorizedUser
 import com.example.coursework.helpers.Transitions
 
@@ -20,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+//        deleteDatabase("main.db")
         binding.tvRegistration.setOnClickListener { transitions.goToRegistrationForm() }
         binding.btnLogin.setOnClickListener { authorization() }
     }

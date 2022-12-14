@@ -6,13 +6,13 @@ import com.example.coursework.database.model.users.UserTypes
 import com.example.coursework.helpers.Constants
 import kotlinx.coroutines.runBlocking
 
-object DatabaseMethods {
+object DatabaseUserMethods {
 
     fun insertUserToDB(
         context: Context, userLogin: String, userPassword: String, isAuthor: Boolean
     ): Boolean = runBlocking {
         val database = MainBD.getDb(context)
-        val selectedLogin = database.getDao().isLoginExist(userLogin)
+        val selectedLogin = database.getUserDao().isLoginExist(userLogin)
 
         return@runBlocking if (!selectedLogin.isNullOrEmpty()) {
             false
@@ -30,7 +30,7 @@ object DatabaseMethods {
                     userPassword
                 )
             }
-            runBlocking { user?.let { database.getDao().insertUser(it) } }
+            runBlocking { user?.let { database.getUserDao().addUser(it) } }
             true
         }
     }
@@ -39,23 +39,28 @@ object DatabaseMethods {
         context: Context, userLogin: String, userPassword: String
     ): User? = runBlocking {
         val database = MainBD.getDb(context)
-        val selectedUser = database.getDao().getUser(insertedLogin = userLogin, insertedPassword = userPassword)
-        return@runBlocking selectedUser
+        return@runBlocking database.getUserDao()
+            .getUser(insertedLogin = userLogin, insertedPassword = userPassword)
     }
 
     fun getUserTypeID(context: Context, userTypeName: String): Int? = runBlocking {
         val database = MainBD.getDb(context)
-        return@runBlocking database.getDao().getUserTypeID(userTypeName)//?.get(0)
+        return@runBlocking database.getUserDao().getUserTypeID(userTypeName)//?.get(0)
+    }
+
+    fun getUserTypeName(context: Context, userTypeID: Int): String? = runBlocking {
+        val database = MainBD.getDb(context)
+        return@runBlocking database.getUserDao().getUserTypeName(userTypeID)
     }
 
     fun insertUserType(context: Context, userType: UserTypes) = runBlocking {
         val database = MainBD.getDb(context)
-        database.getDao().insertUserType(userType)
+        database.getUserDao().addUserType(userType)
     }
 
     fun deleteUserType(context: Context, userType: UserTypes) = runBlocking {
         val database = MainBD.getDb(context)
-        database.getDao().deleteUserType(userType)
+        database.getUserDao().deleteUserType(userType)
     }
 
 }

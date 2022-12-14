@@ -3,7 +3,7 @@ package com.example.coursework.pages.authorization
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.coursework.database.DatabaseMethods.insertUserToDB
+import com.example.coursework.database.DatabaseUserMethods.insertUserToDB
 import com.example.coursework.databinding.ActivityRegistrationBinding
 import com.example.coursework.helpers.Transitions
 import com.example.coursework.pages.authorization.Validation.isLoginValidateToRegister

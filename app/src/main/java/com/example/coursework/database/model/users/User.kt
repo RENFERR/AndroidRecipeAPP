@@ -19,6 +19,7 @@ data class User(
     @PrimaryKey(autoGenerate = true   ) val userID     : Int? = null,
     @ColumnInfo(name = "userTypeID"   ) var userTypeID : Int,
     @ColumnInfo(name = "login"        ) val login      : String,
-    @ColumnInfo(name = "password"     ) var password   : String
+    @ColumnInfo(name = "password"     ) var password   : String,
+    @ColumnInfo(name = "fio"          ) var fio        : String = "user"
 
 )

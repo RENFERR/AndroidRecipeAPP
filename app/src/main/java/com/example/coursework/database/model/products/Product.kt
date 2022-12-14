@@ -10,14 +10,14 @@ import androidx.room.*
         parentColumns = ["productTypeID"],
         childColumns = ["productTypeID"],
         onDelete = ForeignKey.CASCADE
-        )
-    ]
+    )]
 )
 data class Product(
 
     @PrimaryKey(autoGenerate = true      ) val productID     : Int? = null,
     @ColumnInfo(name = "productTypeID"   ) var productTypeID : Int,
     @ColumnInfo(name = "name"            ) var name          : String,
+    @ColumnInfo(name = "pictureURL"      ) var pictureURL    : String,
     @ColumnInfo(name = "calories"        ) var calories      : Int,
     @ColumnInfo(name = "protein"         ) var protein       : Double,
     @ColumnInfo(name = "fat"             ) var fat           : Double,

@@ -9,22 +9,14 @@
                 android:title="Профиль"
                 android:id="@+id/acc_user_profile"
                 android:icon="@drawable/ic_account_circle"/>
-            <item
-                android:title="Настройки"
-                android:id="@+id/acc_user_settings"
-                android:icon="@drawable/ic_settings"/>
         </menu>
     </item>
 
     <item android:title="Рецепты">
         <menu>
             <item
-                android:title="Поиск рецептов"
-                android:id="@+id/recipes_search"
-                android:icon="@drawable/ic_search"/>
-            <item
                 android:title="Все рецепты"
-                android:id="@+id/recipes_category"
+                android:id="@+id/recipes_list"
                 android:icon="@drawable/ic_format_list_bulleted"/>
             <item
                 android:title="Добавить"
@@ -36,30 +28,28 @@
     <item android:title="Продукты">
         <menu>
             <item
-                android:title="Поиск продуктов"
-                android:id="@+id/products_search"
-                android:icon="@drawable/ic_search"/>
-            <item
                 android:title="Все продукты"
-                android:id="@+id/products_category"
+                android:id="@+id/products_list"
                 android:icon="@drawable/ic_format_list_bulleted"/>
         </menu>
     </item>
 
-    <item android:title="Администрирование">
+    <item
+        android:id="@+id/admin_panel"
+        android:title="Администрирование">
         <menu>
             <item
-                android:title="Продукты"
                 android:id="@+id/admin_edit_product"
-                android:icon="@drawable/ic_settings"/>
+                android:icon="@drawable/ic_settings"
+                android:title="Продукты" />
             <item
-                android:title="Категории продуктов"
                 android:id="@+id/admin_edit_product_category"
-                android:icon="@drawable/ic_settings"/>
+                android:icon="@drawable/ic_settings"
+                android:title="Категории продуктов" />
             <item
-                android:title="Категории рецептов"
                 android:id="@+id/admin_edit_recipe_category"
-                android:icon="@drawable/ic_settings"/>
+                android:icon="@drawable/ic_settings"
+                android:title="Категории рецептов" />
         </menu>
     </item>
 </menu>

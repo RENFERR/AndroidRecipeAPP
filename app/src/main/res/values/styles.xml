@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  Buttons  -->
+    <style name="input_layout_field" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="default_btn">
+        <item name="android:textAppearance">@android:style/TextAppearance.Material.Medium</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:minHeight">48dip</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="btn_cancel" parent="default_btn">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/red_cancel</item>
+    </style>
+
+    <style name="btn_accept" parent="default_btn">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/green_accept</item>
+    </style>
+
+    <style name="default_text">
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="default_link" parent="default_text">
+        <item name="android:ellipsize">end</item>
+        <item name="android:autoLink">web</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="order_field_value" parent="default_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="default_checkbox" parent="default_text">
+        <item name="android:padding">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:checkMark">?android:attr/listChoiceIndicatorMultiple</item>
+    </style>
+
+    <style name="round_checkbox" parent="default_checkbox">
+        <item name="android:checkMark">?android:attr/listChoiceIndicatorSingle</item>
+    </style>
+
+    <style name="report_title_h1">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@color/color_main</item>
+    </style>
+    <style name="report_item_title_h2" parent="default_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/color_main</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+    </style>
+
+    <style name="report_item_description" parent="default_text">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="report_item_input" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:focusable">false</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+</resources>
