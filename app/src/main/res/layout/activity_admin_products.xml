@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".pages.admin.ActivityAdminProducts">
 
 
@@ -31,7 +32,7 @@
                 style="@style/input_layout_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="* Наименование продукта"
+                android:hint="*Наименование продукта"
                 android:paddingVertical="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -41,11 +42,26 @@
                     android:inputType="textShortMessage" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                style="@style/default_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="16dp"
+                android:text="Выберите категорию:" />
+
             <Spinner
                 android:id="@+id/spinner_product_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="8dp"
                 android:spinnerMode="dialog" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout_product_picture_url"
@@ -67,7 +83,7 @@
                 style="@style/input_layout_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Калории"
+                android:hint="*Калории"
                 android:paddingVertical="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -82,7 +98,7 @@
                 style="@style/input_layout_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Белки"
+                android:hint="*Белки"
                 android:paddingVertical="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -97,7 +113,7 @@
                 style="@style/input_layout_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Жиры"
+                android:hint="*Жиры"
                 android:paddingVertical="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -112,7 +128,7 @@
                 style="@style/input_layout_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Улглеводы"
+                android:hint="*Улглеводы"
                 android:paddingVertical="8dp">
 
                 <com.google.android.material.textfield.TextInputEditText
