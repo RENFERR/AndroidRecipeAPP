@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.coursework.database.model.recipes.Recipe
 import com.example.coursework.database.model.recipes.RecipeProducts
 import com.example.coursework.database.model.recipes.RecipeStep
@@ -16,9 +17,14 @@ interface RecipeDao {
     @Insert
     suspend fun addRecipe(recipe: Recipe)
     @Insert
+    suspend fun addRecipeType(type: RecipeType)
+    @Insert
     suspend fun addRecipeStep(step: RecipeStep)
     @Insert
     suspend fun addRecipeProduct(products: RecipeProducts)
+
+    @Update
+    suspend fun updateRecipe(recipe: Recipe)
 
     @Delete
     suspend fun deleteRecipe(recipe: Recipe)
@@ -35,5 +41,7 @@ interface RecipeDao {
     fun getAllRecipeTypes(): Flow<List<RecipeType>>
     @Query("SELECT * FROM recipe_types WHERE recipeTypeID = :recipeTypeID")
     fun getRecipeTypeWithID(recipeTypeID: Int): RecipeType
+    @Query("SELECT * FROM recipes WHERE recipeID = :recipeID")
+    fun getRecipeByID(recipeID: String): Recipe
 
 }

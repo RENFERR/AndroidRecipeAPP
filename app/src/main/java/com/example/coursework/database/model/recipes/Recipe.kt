@@ -17,11 +17,10 @@ import androidx.room.PrimaryKey
 )
 data class Recipe(
 
-    @PrimaryKey(autoGenerate = true        ) val recipeID          : Int? = null,
-    @ColumnInfo(name = "recipeTypeID"      ) val recipeTypeID      : Int? = null,
-    @ColumnInfo(name = "recipeName"        ) var recipeName        : String,
-    @ColumnInfo(name = "recipePictureURL"  ) var recipePictureURL  : String,
-    @ColumnInfo(name = "recipeDescription" ) var recipeDescription : String,
-    @ColumnInfo(name = "recipeIngredients" ) var recipeIngredients : Int
+    @PrimaryKey(autoGenerate = false       ) val recipeID          : String,
+    @ColumnInfo(name = "recipeTypeID"      ) var recipeTypeID      : Int? = null,
+    @ColumnInfo(name = "recipeName"        ) var recipeName        : String?,
+    @ColumnInfo(name = "recipePictureURL"  ) var recipePictureURL  : String?,
+    @ColumnInfo(name = "recipeDescription" ) var recipeDescription : String?
 
 )

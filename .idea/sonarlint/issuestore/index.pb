@@ -1,3 +1,29 @@
 
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+m
+=app/src/main/java/com/example/coursework/helpers/Constants.kt,4\1\41f4e61d10cf7eb98d8c07adf6f1e347804840e4
+z
+Japp/src/main/java/com/example/coursework/database/model/users/UserTypes.kt,7\0\70e1eb7f047ac38239bd4d3ed3c363721e1c39ac
+
+Oapp/src/main/java/com/example/coursework/pages/products/ActivityProductsList.kt,9\b\9beaf45c1053d290353f1c57206fef5f37887b3e
+}
+Mapp/src/main/java/com/example/coursework/pages/recipes/ActivityRecipesList.kt,c\6\c6fd19e9336b309b1c77d4060ce5d05fc05b8365
+}
+Mapp/src/main/java/com/example/coursework/pages/account/ActivityUserProfile.kt,1\4\148ede5094739b4b817df6640aae3b2c93525b36
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+n
+>app/src/main/java/com/example/coursework/pages/HomeActivity.kt,d\8\d8e55f132c985c8865fc2d09a7b7430bf7407e9b
+„
+Tapp/src/main/java/com/example/coursework/pages/authorization/RegistrationActivity.kt,8\1\813fa7ee42feb0ddb69b6139cd82bb8a05f886af
+o
+?app/src/main/java/com/example/coursework/helpers/Transitions.kt,3\7\3753c30e63691c138a91959e574e85ca35d86d86
+u
+Eapp/src/main/java/com/example/coursework/database/model/users/User.kt,1\2\12577637819071852cd3786c5cc865f8d0d2cc13
+p
+@app/src/main/java/com/example/coursework/database/dao/UserDao.kt,7\4\7402d62e0fa11efb6b6a7aaf9782e726fa232261
+z
+Japp/src/main/java/com/example/coursework/pages/authorization/Validation.kt,9\e\9e465c008422fd54962b4a86e439e0f899717440
+
+Oapp/src/main/java/com/example/coursework/database/model/products/ProductType.kt,2\8\28a2dcdd592919c72fc07a68b8ab28997fd42dde

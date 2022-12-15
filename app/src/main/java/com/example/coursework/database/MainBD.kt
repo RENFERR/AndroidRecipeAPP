@@ -25,7 +25,6 @@ import kotlinx.coroutines.runBlocking
     Recipe::class,
     RecipeType::class,
     RecipeStep::class,
-    RecipeSteps::class,
     RecipeProducts::class], version = 1)
 abstract class MainBD: RoomDatabase() {
 

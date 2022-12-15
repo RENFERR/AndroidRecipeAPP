@@ -10,7 +10,7 @@ data class RecipeType(
 
     @PrimaryKey(autoGenerate = true            ) val recipeTypeID          : Int? = null,
     @ColumnInfo(name = "recipeTypeName"        ) var recipeTypeName        : String,
-    @ColumnInfo(name = "recipeTypeDescription" ) var recipeTypeDescription : String,
-    @ColumnInfo(name = "recipeTypePictureURL"  ) var recipeTypePictureURL  : String
+    @ColumnInfo(name = "recipeTypeDescription" ) var recipeTypeDescription : String?,
+    @ColumnInfo(name = "recipeTypePictureURL"  ) var recipeTypePictureURL  : String?
 
 )
