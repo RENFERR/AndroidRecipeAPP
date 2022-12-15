@@ -29,10 +29,12 @@ class ActivityAdminProducts : AppCompatActivity() {
     private fun setProductTypesList() {
         val databaseDao = getDb(this@ActivityAdminProducts).getProductDao()
         databaseDao.getAllProductsTypes()?.asLiveData()?.observe(this@ActivityAdminProducts) { productTypesList ->
-            AdapterSpinnerProductType(binding.spinnerProductType, productTypesList) { pickedProductType ->
-                this.pickedProductType = pickedProductType
-                Log.d("Test", "ActivityAdminProducts -> setProductTypesList: picked type = $pickedProductType")
-            }.iniSpinner()
+            if (!productTypesList.isNullOrEmpty()) {
+                AdapterSpinnerProductType(binding.spinnerProductType, productTypesList) { pickedProductType ->
+                    this.pickedProductType = pickedProductType
+                    Log.d("Test", "ActivityAdminProducts -> setProductTypesList: picked type = $pickedProductType")
+                }.iniSpinner()
+            }
         }
     }
 

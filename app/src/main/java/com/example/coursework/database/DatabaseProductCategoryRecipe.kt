@@ -21,15 +21,19 @@ object DatabaseProductCategoryRecipe {
         return@runBlocking 1
     }
 
-    fun addRecipe(context: Context, recipe: Recipe): Recipe = runBlocking {
+    fun addRecipe(context: Context, recipe: Recipe) = runBlocking {
         val database = MainBD.getDb(context)
         database.getRecipeDao().addRecipe(recipe)
-        return@runBlocking database.getRecipeDao().getRecipeByID(recipe.recipeID)
     }
 
     fun updateRecipe(context: Context, recipe: Recipe) = runBlocking {
         val database = MainBD.getDb(context)
         database.getRecipeDao().updateRecipe(recipe)
+    }
+
+    fun deleteRecipe(context: Context, recipe: Recipe) = runBlocking {
+        val database = MainBD.getDb(context)
+        database.getRecipeDao().deleteRecipe(recipe)
     }
 
 }
