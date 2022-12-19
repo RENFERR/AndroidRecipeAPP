@@ -25,6 +25,8 @@ interface RecipeDao {
 
     @Update
     suspend fun updateRecipe(recipe: Recipe)
+    @Update
+    suspend fun updateRecipeStep(recipeStep: RecipeStep)
 
     @Delete
     suspend fun deleteRecipe(recipe: Recipe)
@@ -34,14 +36,18 @@ interface RecipeDao {
     suspend fun deleteRecipeProduct(products: RecipeProducts)
 
     @Query("SELECT * FROM recipes")
-    fun getAllRecipes(): Flow<List<Recipe>>
+    fun getAllRecipes(): Flow<List<Recipe>?>
     @Query("SELECT * FROM recipes WHERE recipeTypeID = :recipeTypeID")
-    fun getRecipesWithType(recipeTypeID: Int): Flow<List<Recipe>>
+    fun getRecipesWithType(recipeTypeID: Int): Flow<List<Recipe>?>
     @Query("SELECT * FROM recipe_types")
     fun getAllRecipeTypes(): Flow<List<RecipeType>>?
     @Query("SELECT * FROM recipe_types WHERE recipeTypeID = :recipeTypeID")
-    fun getRecipeTypeWithID(recipeTypeID: Int): RecipeType
+    suspend fun getRecipeTypeWithID(recipeTypeID: Int): RecipeType?
     @Query("SELECT * FROM recipes WHERE recipeID = :recipeID")
-    fun getRecipeByID(recipeID: String): Recipe
+    suspend fun getRecipeByID(recipeID: String): Recipe?
+    @Query("SELECT * FROM recipe_step WHERE recipeStepID = :recipeStepID")
+    suspend fun getRecipeStepByID(recipeStepID: String): RecipeStep?
+    @Query("SELECT * FROM recipe_step WHERE recipeID = :recipeID")
+    suspend fun getRecipeStepsByRecipeID(recipeID: String): List<RecipeStep>?
 
 }

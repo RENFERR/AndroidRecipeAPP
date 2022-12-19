@@ -1,6 +1,4 @@
 
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 m
 =app/src/main/java/com/example/coursework/helpers/Constants.kt,4\1\41f4e61d10cf7eb98d8c07adf6f1e347804840e4
 z
@@ -27,3 +25,25 @@ z
 Japp/src/main/java/com/example/coursework/pages/authorization/Validation.kt,9\e\9e465c008422fd54962b4a86e439e0f899717440
 
 Oapp/src/main/java/com/example/coursework/database/model/products/ProductType.kt,2\8\28a2dcdd592919c72fc07a68b8ab28997fd42dde
+x
+Happ/src/main/java/com/example/coursework/database/DatabaseUserMethods.kt,c\8\c8f1a30d253a814d81c3ea8f9e1aed72ae19913b
+{
+Kapp/src/main/java/com/example/coursework/database/model/products/Product.kt,b\9\b96147a3100bdcf3a0388a2be560089ffac8f35f
+Ö
+Uapp/src/main/java/com/example/coursework/pages/admin/ActivityAdminProductsCategory.kt,5\8\58806d2573fb65cca89c2105463ae3a3c46613aa
+Å
+Qapp/src/main/java/com/example/coursework/database/model/recipes/RecipeProducts.kt,c\8\c8aafce10bf779fb93099122d6ce507e2e027421
+Ñ
+Tapp/src/main/java/com/example/coursework/pages/admin/ActivityAdminRecipesCategory.kt,f\7\f783b3f679b37cf04aaa041c66af62bb862f054b
+|
+Lapp/src/main/java/com/example/coursework/database/DatabaseProductsMethods.kt,5\a\5a2e3c21c6c02b0e0f27d12753ba4d2a8118603f
+~
+Napp/src/main/java/com/example/coursework/database/model/recipes/RecipeSteps.kt,b\d\bd38160cd01ae88c3ddadc79267f6446232e6c67
+ä
+Zapp/src/main/java/com/example/coursework/pages/admin/adapters/AdapterSpinnerProductType.kt,0\3\037a43da6970c95bd1fb0819aec1764c5deb1e32
+å
+\app/src/main/java/com/example/coursework/pages/recipes/adapters/AdapterSpinnerRecipeTypes.kt,8\0\805e8e933bef149ca293af21f14b134ea0bfa3b8
+}
+Mapp/src/main/java/com/example/coursework/pages/admin/ActivityAdminProducts.kt,c\6\c634d682f081d92a93a5ab24c77b4a2773977797
+s
+Capp/src/main/java/com/example/coursework/database/dao/ProductDao.kt,4\7\475e15634320408b44a5f0c30684873902aa67da

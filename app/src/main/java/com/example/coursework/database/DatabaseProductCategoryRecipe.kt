@@ -13,12 +13,9 @@ object DatabaseProductCategoryRecipe {
         database.getRecipeDao().addRecipeType(recipeType)
     }
 
-    fun addRecipeStep(context: Context, recipeStep: RecipeStep, recipeID: Int?): Int = runBlocking {
+    fun addRecipeStep(context: Context, recipeStep: RecipeStep)= runBlocking {
         val database = MainBD.getDb(context)
         database.getRecipeDao().addRecipeStep(recipeStep)
-
-
-        return@runBlocking 1
     }
 
     fun addRecipe(context: Context, recipe: Recipe) = runBlocking {
@@ -31,9 +28,23 @@ object DatabaseProductCategoryRecipe {
         database.getRecipeDao().updateRecipe(recipe)
     }
 
+    fun updateRecipeStep(context: Context, recipeStep: RecipeStep) = runBlocking {
+        val database = MainBD.getDb(context)
+        database.getRecipeDao().updateRecipeStep(recipeStep)
+    }
+
     fun deleteRecipe(context: Context, recipe: Recipe) = runBlocking {
         val database = MainBD.getDb(context)
         database.getRecipeDao().deleteRecipe(recipe)
     }
 
+    fun deleteRecipeStep(context: Context, recipeStep: RecipeStep) = runBlocking {
+        val database = MainBD.getDb(context)
+        database.getRecipeDao().deleteRecipeStep(recipeStep)
+    }
+
+    fun getRecipeStepByID(context: Context, recipeStepID: String): RecipeStep? = runBlocking {
+        val database = MainBD.getDb(context)
+        return@runBlocking database.getRecipeDao().getRecipeStepByID(recipeStepID)
+    }
 }

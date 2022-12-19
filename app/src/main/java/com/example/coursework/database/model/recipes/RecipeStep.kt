@@ -18,7 +18,7 @@ import androidx.room.PrimaryKey
 data class RecipeStep(
 
     @PrimaryKey(autoGenerate = true            ) val recipeStepID          : Int? = null,
-    @ColumnInfo(name = "recipeID"              ) var recipeID              : Int,
+    @ColumnInfo(name = "recipeID"              ) val recipeID              : String,
     @ColumnInfo(name = "recipeStepTitle"       ) var recipeStepTitle       : String,
     @ColumnInfo(name = "recipeStepDescription" ) var recipeStepDescription : String,
     @ColumnInfo(name = "recipeStepPictureURL"  ) var recipeStepPictureURL  : String?

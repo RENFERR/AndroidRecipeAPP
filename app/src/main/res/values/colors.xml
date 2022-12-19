@@ -12,7 +12,8 @@
     <color name="color_recipe_title">#FF3167AC</color>
 
     <color name="black_text">#FF212121</color>
-    <color name="grey">#B5B5B5</color>
+    <color name="grey">#FFB5B5B5</color>
+    <color name="red">#FFAF2B2B</color>
     <color name="red_cancel">#FFCD1B35</color>
     <color name="green_accept">#FF68B120</color>
     <color name="yellow">#FFFFFF00</color>

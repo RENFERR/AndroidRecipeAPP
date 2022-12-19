@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.coursework"
-        minSdk 25
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -49,7 +49,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     // Мои
-
+    // View
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
     // Системные
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1' // Библиотека ассихронных вызовов
     // https://developer.android.com/kotlin/coroutines
