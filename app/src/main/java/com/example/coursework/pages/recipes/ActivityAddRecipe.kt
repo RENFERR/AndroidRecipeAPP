@@ -14,11 +14,15 @@ import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coursework.database.DatabaseProductCategoryRecipe.addRecipe
 import com.example.coursework.database.DatabaseProductCategoryRecipe.addRecipeStep
+import com.example.coursework.database.DatabaseProductsMethods.addRecipeProduct
 import com.example.coursework.database.MainBD
 import com.example.coursework.database.model.recipes.Recipe
+import com.example.coursework.database.model.recipes.RecipeProducts
 import com.example.coursework.database.model.recipes.RecipeStep
 import com.example.coursework.databinding.ActivityAddRecipeBinding
 import com.example.coursework.helpers.Transitions
+import com.example.coursework.pages.recipes.adapters.AdapterAddRecipeProduct
+import com.example.coursework.pages.recipes.adapters.AdapterAddRecipeProduct.Companion.productsList
 import com.example.coursework.pages.recipes.adapters.AdapterAddRecipeSteps
 import com.example.coursework.pages.recipes.adapters.AdapterAddRecipeSteps.Companion.stepsList
 import com.example.coursework.pages.recipes.adapters.AdapterSpinnerRecipeTypes
@@ -32,6 +36,7 @@ class ActivityAddRecipe : AppCompatActivity() {
     private var pickedRecipeTypeID: Int? = null
     private val database by lazy { MainBD.getDb(this@ActivityAddRecipe) }
     private val adapterAddRecipeSteps by lazy { AdapterAddRecipeSteps() }
+    private val adapterAddRecipeProduct by lazy { AdapterAddRecipeProduct() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +61,13 @@ class ActivityAddRecipe : AppCompatActivity() {
             setHasFixedSize(false)
             isNestedScrollingEnabled = false
             this.adapter = adapterAddRecipeSteps
-//            setOnTouchListener { view, _ -> closeKeyboard(view) }
+        }
+        recyclerviewRecipeProducts.apply {
+            this.adapter = adapterAddRecipeProduct
+        }
+        buttonAddRecipeProduct.setOnClickListener {
+            val iniRecipeProduct = RecipeProducts(null, iniRecipe.recipeID, null, 0.0)
+            adapterAddRecipeProduct.addRecipeProduct(iniRecipeProduct)
         }
         buttonAddRecipeStep.setOnClickListener {
             val iniRecipeStep = RecipeStep(null, iniRecipe.recipeID, "", "", "")
@@ -67,21 +78,40 @@ class ActivityAddRecipe : AppCompatActivity() {
             val recipePictureURL = inputEditTextProductPictureUrl.text?.toString()
             val recipeDescription = inputEditTextProductDescription.text?.toString()
             if (stepsList.isNotEmpty()) {
-                if (!recipeName.isNullOrEmpty()) {
-                    iniRecipe.recipeName = recipeName
-                    iniRecipe.recipeDescription = recipeDescription
-                    iniRecipe.recipePictureURL = recipePictureURL
-                    iniRecipe.recipeTypeID = pickedRecipeTypeID
-                    addRecipe(this@ActivityAddRecipe, iniRecipe)
-                    stepsList.forEach {
-                        addRecipeStep(this@ActivityAddRecipe, it)
+                if (productsList.isNotEmpty()) {
+                    if (!recipeName.isNullOrEmpty()) {
+                        iniRecipe.recipeName = recipeName
+                        iniRecipe.recipeDescription = recipeDescription
+                        iniRecipe.recipePictureURL = recipePictureURL
+                        iniRecipe.recipeTypeID = pickedRecipeTypeID
+                        addRecipe(this@ActivityAddRecipe, iniRecipe)
+                        stepsList.forEach {
+                            addRecipeStep(this@ActivityAddRecipe, it)
+                        }
+                        productsList.forEach {
+                            addRecipeProduct(this@ActivityAddRecipe, it)
+                        }
+                        if (closeKeyboard(binding.buttonAddRecipeStep)) {
+                            stepsList.clear()
+                            productsList.clear()
+                        }
+                        Toast.makeText(
+                            this@ActivityAddRecipe,
+                            "Вы успешно добавили рецепт $recipeName",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        transitions.goToHomePage()
+                    } else {
+                        Toast.makeText(
+                            this@ActivityAddRecipe,
+                            "Задайте название рецепту",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                    if (closeKeyboard(binding.buttonAddRecipeStep)) stepsList.clear()
-                    transitions.goToHomePage()
                 } else {
                     Toast.makeText(
                         this@ActivityAddRecipe,
-                        "Задайте название рецепту",
+                        "невозможно создать рецепт без продуктво",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.example.coursework.database.model.products.Product
 import com.example.coursework.database.model.recipes.Recipe
 import com.example.coursework.database.model.recipes.RecipeProducts
 import com.example.coursework.database.model.recipes.RecipeStep
@@ -49,5 +50,7 @@ interface RecipeDao {
     suspend fun getRecipeStepByID(recipeStepID: String): RecipeStep?
     @Query("SELECT * FROM recipe_step WHERE recipeID = :recipeID")
     suspend fun getRecipeStepsByRecipeID(recipeID: String): List<RecipeStep>?
+    @Query("SELECT * FROM recipes INNER JOIN recipe_products ON recipe_products.recipeID = recipes.recipeID INNER JOIN products ON products.productID = recipe_products.productID WHERE recipe_products.recipeID = :recipeID")
+    suspend fun getRecipeProductsByRecipeID(recipeID: String): List<Product>?
 
 }

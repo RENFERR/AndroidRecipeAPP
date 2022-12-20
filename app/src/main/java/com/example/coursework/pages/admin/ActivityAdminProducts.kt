@@ -32,7 +32,6 @@ class ActivityAdminProducts : AppCompatActivity() {
             if (!productTypesList.isNullOrEmpty()) {
                 AdapterSpinnerProductType(binding.spinnerProductType, productTypesList) { pickedProductType ->
                     this.pickedProductType = pickedProductType
-                    Log.d("Test", "ActivityAdminProducts -> setProductTypesList: picked type = $pickedProductType")
                 }.iniSpinner()
             }
         }
@@ -42,21 +41,21 @@ class ActivityAdminProducts : AppCompatActivity() {
         val productName = inputEditTextProductName.text?.toString()
         val productType = pickedProductType?.productTypeID
         val productPictureURL = inputEditTextProductPictureUrl.text?.toString()
-        val calories = inputEditTextProductCalories.text?.toString()?.toInt()
-        val protein = inputEditTextProductProtein.text?.toString()?.toDouble()
-        val fat = inputEditTextProductFat.text?.toString()?.toDouble()
-        val carbohydrates = inputEditTextProductCarbohydrates.text?.toString()?.toDouble()
+        val calories = inputEditTextProductCalories.text?.toString()
+        val protein = inputEditTextProductProtein.text?.toString()
+        val fat = inputEditTextProductFat.text?.toString()
+        val carbohydrates = inputEditTextProductCarbohydrates.text?.toString()
 
-        if (isAllFieldsValueIsNotNull(arrayListOf(productName, productType, calories, protein, fat, carbohydrates))) {
+        if (isAllFieldsValueIsNotNull(arrayListOf(productName, productType?.toString(), calories, protein, fat, carbohydrates))) {
             addNewProduct(this@ActivityAdminProducts, Product(
                 null,
                 productType!!,
                 productName!!,
                 productPictureURL,
-                calories!!,
-                protein!!,
-                fat!!,
-                carbohydrates!!)
+                calories!!.toInt(),
+                protein!!.toDouble(),
+                fat!!.toDouble(),
+                carbohydrates!!.toDouble())
             )
             inputEditTextProductName.text?.clear()
             inputEditTextProductPictureUrl.text?.clear()
@@ -78,11 +77,11 @@ class ActivityAdminProducts : AppCompatActivity() {
         }
     }
 
-    private fun isAllFieldsValueIsNotNull(valueList: ArrayList<Any?>): Boolean {
-        var isFieldsNotEmpty = false
+    private fun isAllFieldsValueIsNotNull(valueList: ArrayList<String?>): Boolean {
+        var isFieldsNotEmpty = true
         valueList.forEach {
-            if (it?.toString()?.isEmpty() != true) {
-                isFieldsNotEmpty = true
+            if (it.isNullOrEmpty()) {
+                isFieldsNotEmpty = false
             }
         }
         return isFieldsNotEmpty

@@ -20,7 +20,7 @@ class AdapterAddRecipeSteps: RecyclerView.Adapter<AdapterAddRecipeSteps.ViewHold
             tieRecipeStepTitle.setText(recipeStep.recipeStepTitle)
             tieRecipeStepDescription.setText(recipeStep.recipeStepDescription)
             tieRecipeStepPictureUrl.setText(recipeStep.recipeStepPictureURL)
-            textViewStepTitle.text = "Шаг #${adapterPosition+1}"
+            textViewStepTitle.text = "Шаг #${absoluteAdapterPosition+1}"
             buttonDeleteRecipeStep.setOnClickListener {
                 stepsList.remove(recipeStep)
                 notifyDataSetChanged()

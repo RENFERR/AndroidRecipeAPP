@@ -15,7 +15,7 @@ import androidx.room.*
 data class Product(
 
     @PrimaryKey(autoGenerate = true      ) val productID     : Int? = null,
-    @ColumnInfo(name = "productTypeID"   ) var productTypeID : Int,
+    @ColumnInfo(name = "productTypeID"   ) var productTypeID : Int?,
     @ColumnInfo(name = "name"            ) var name          : String,
     @ColumnInfo(name = "pictureURL"      ) var pictureURL    : String?,
     @ColumnInfo(name = "calories"        ) var calories      : Int,

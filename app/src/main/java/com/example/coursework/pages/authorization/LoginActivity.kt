@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        deleteDatabase("main.db")
+//        deleteDatabase("main.db")
         binding.tvRegistration.setOnClickListener { transitions.goToRegistrationForm() }
         binding.btnLogin.setOnClickListener { authorization() }
     }

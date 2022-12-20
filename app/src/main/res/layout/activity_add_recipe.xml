@@ -7,7 +7,7 @@
     android:padding="8dp"
     tools:context=".pages.recipes.ActivityAddRecipe">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollViewAddRecipe"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -94,20 +94,42 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/button_add_recipe_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="добавить продукт рецепта" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewRecipeProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_added_product_in_recipe">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
                 android:id="@+id/button_add_recipe_step"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="добавить шаг рецепта" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewRecipeSteps"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/item_recipe_step" />
+                android:layout_height="wrap_content">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewRecipeSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_recipe_step" />
+            </RelativeLayout>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <Button
         android:id="@+id/button_add_recipe"

@@ -23,9 +23,9 @@ import com.example.coursework.database.model.products.Product
 )
 data class RecipeProducts(
 
-    @PrimaryKey(autoGenerate = true   ) val id               : Int,
-    @ColumnInfo(name = "recipeID"     ) val recipeID         : Int,
-    @ColumnInfo(name = "productID"    ) val productID        : Int,
-    @ColumnInfo(name = "productCount" ) val productCount     : Double
+    @PrimaryKey(autoGenerate = true   ) val id               : Int?,
+    @ColumnInfo(name = "recipeID"     ) val recipeID         : String?,
+    @ColumnInfo(name = "productID"    ) var productID        : Int?,
+    @ColumnInfo(name = "productCount" ) var productCount     : Double
 
 )
