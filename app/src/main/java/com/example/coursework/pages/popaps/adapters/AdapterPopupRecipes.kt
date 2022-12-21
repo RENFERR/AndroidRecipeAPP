@@ -12,6 +12,7 @@ import com.example.coursework.database.DatabaseRecipeMethods.getRecipeProductsBy
 import com.example.coursework.database.model.recipes.Recipe
 import com.example.coursework.databinding.ItemPopupRecipeBinding
 import com.example.coursework.helpers.InsertPictureIntoImageView.setImage
+import com.example.coursework.helpers.Transitions
 
 class AdapterPopupRecipes(private val recipeList: List<Recipe>): RecyclerView.Adapter<AdapterPopupRecipes.ViewHolder>() {
 
@@ -25,6 +26,7 @@ class AdapterPopupRecipes(private val recipeList: List<Recipe>): RecyclerView.Ad
             itemPopupRecipeTitle.text = recipe.recipeName
             itemPopupProductDescription.text = recipe.recipeDescription
             itemPopupProductCalories.text = "Калорийность: ${getRecipeCalories(recipe.recipeID)}"
+            cardViewItemPopUp.setOnClickListener { Transitions(contextView).goToRecipeInfo(recipe.recipeID) }
         }
 
         private fun getRecipeCalories(recipeID: String): Double {
