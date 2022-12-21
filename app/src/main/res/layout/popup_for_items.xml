@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popupWindowBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.popaps.PopupRecipeTypeInfo">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/popupCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/popupTitle"
+                    style="@style/report_item_title_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Категория" />
+
+                <TextView
+                    android:id="@+id/popupItemTitle"
+                    style="@style/field_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Мясо" />
+
+                <TextView
+                    android:id="@+id/popupItemDescription"
+                    style="@style/field_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Не полезное, но вкусное" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/popupRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_popup_recipe" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

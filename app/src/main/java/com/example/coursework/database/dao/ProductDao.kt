@@ -24,12 +24,22 @@ interface ProductDao {
     @Delete
     suspend fun deleteProductType(productType: ProductType)
 
+
+
+    @Query("SELECT * FROM products")
+    fun getAllProductsFlow(): Flow<List<Product>>?
     @Query("SELECT * FROM products")
     suspend fun getAllProducts(): List<Product>?
+
     @Query("SELECT * FROM product_types")
-    fun getAllProductsTypes(): Flow<List<ProductType>>?
+    fun getAllProductsTypesFlow(): Flow<List<ProductType>>?
+
+    @Query("SELECT * FROM product_types")
+    suspend fun getAllProductsTypes(): List<ProductType>?
+
     @Query("SELECT * FROM products WHERE productTypeID = :productTypeID")
     fun getProductsWithType(productTypeID: Int): Flow<List<Product>>?
+
     @Query("SELECT * FROM products WHERE productID = :productID")
     suspend fun getProductByID(productID: Int): Product?
 

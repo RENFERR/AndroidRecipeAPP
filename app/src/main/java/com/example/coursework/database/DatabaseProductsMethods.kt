@@ -17,19 +17,14 @@ object DatabaseProductsMethods {
         database.getProductDao().addRecipeProduct(recipeProducts)
     }
 
-    fun getRecipeProductsByRecipeID(context: Context, recipeID: String): List<Product> = runBlocking {
+    fun getProductsByRecipeID(context: Context, recipeID: String): List<Product> = runBlocking {
         val database = MainBD.getDb(context)
-        return@runBlocking database.getRecipeDao().getRecipeProductsByRecipeID(recipeID) ?: listOf()
+        return@runBlocking database.getRecipeDao().getProductsByRecipeID(recipeID) ?: listOf()
     }
 
     fun getProductByID(context: Context, productID: Int?): Product? = runBlocking {
         val database = MainBD.getDb(context)
         return@runBlocking productID?.let { database.getProductDao().getProductByID(it) }
-    }
-
-    fun getAllProducts(context: Context): List<Product> = runBlocking {
-        val database = MainBD.getDb(context)
-        return@runBlocking database.getProductDao().getAllProducts() ?: listOf()
     }
 
 }

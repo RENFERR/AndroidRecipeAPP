@@ -3,16 +3,17 @@ package com.example.coursework.pages.recipes.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coursework.R
-import com.example.coursework.database.DatabaseProductsMethods.getAllProducts
 import com.example.coursework.database.DatabaseProductsMethods.getProductByID
-import com.example.coursework.database.DatabaseProductsMethods.getRecipeProductsByRecipeID
+import com.example.coursework.database.MainBD
 import com.example.coursework.database.model.recipes.RecipeProducts
 import com.example.coursework.databinding.ItemAddedProductInRecipeBinding
 import com.example.coursework.helpers.SimpleTextWatcher
 
-class AdapterAddRecipeProduct: RecyclerView.Adapter<AdapterAddRecipeProduct.ViewHolder>() {
+class AdapterAddRecipeProduct(private val activity: AppCompatActivity): RecyclerView.Adapter<AdapterAddRecipeProduct.ViewHolder>() {
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
@@ -24,12 +25,14 @@ class AdapterAddRecipeProduct: RecyclerView.Adapter<AdapterAddRecipeProduct.View
 
             val iniProduct = if (recipeProduct.productID != null) getProductByID(contextView, recipeProduct.productID) else null
 
-            val productsList = getAllProducts(contextView)
-            productsList.isNotEmpty().let {
-                AdapterSpinnerProducts(spinnerProductsList, productsList) { pickedProduct ->
-                    recipeProduct.productID = pickedProduct.productID
-                }.iniSpinner(iniProduct)
+            MainBD.getDb(contextView).getProductDao().getAllProductsFlow()?.asLiveData()?.observe(activity) {
+                it.let { productsList ->
+                    AdapterSpinnerProducts(spinnerProductsList, productsList) { pickedProduct ->
+                        recipeProduct.productID = pickedProduct.productID
+                    }.iniSpinner(iniProduct)
+                }
             }
+
 
             inputEditTextRecipeAddProductWeight.addTextChangedListener(object : SimpleTextWatcher() {
                 override fun onTextChanged(field: CharSequence?, start: Int, before: Int, count: Int) {

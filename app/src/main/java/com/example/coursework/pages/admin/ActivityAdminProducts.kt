@@ -2,7 +2,6 @@ package com.example.coursework.pages.admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.asLiveData
 import com.example.coursework.database.DatabaseProductsMethods.addNewProduct
@@ -28,7 +27,7 @@ class ActivityAdminProducts : AppCompatActivity() {
     private var pickedProductType: ProductType? = null
     private fun setProductTypesList() {
         val databaseDao = getDb(this@ActivityAdminProducts).getProductDao()
-        databaseDao.getAllProductsTypes()?.asLiveData()?.observe(this@ActivityAdminProducts) { productTypesList ->
+        databaseDao.getAllProductsTypesFlow()?.asLiveData()?.observe(this@ActivityAdminProducts) { productTypesList ->
             if (!productTypesList.isNullOrEmpty()) {
                 AdapterSpinnerProductType(binding.spinnerProductType, productTypesList) { pickedProductType ->
                     this.pickedProductType = pickedProductType

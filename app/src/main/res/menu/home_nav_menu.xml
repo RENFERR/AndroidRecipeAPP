@@ -3,21 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Аккаунт">
-        <menu>
-            <item
-                android:title="Профиль"
-                android:id="@+id/acc_user_profile"
-                android:icon="@drawable/ic_account_circle"/>
-        </menu>
-    </item>
-
     <item android:title="Рецепты">
         <menu>
             <item
-                android:title="Все рецепты"
                 android:id="@+id/recipes_list"
-                android:icon="@drawable/ic_format_list_bulleted"/>
+                android:icon="@drawable/ic_format_list_bulleted"
+                android:title="Все рецепты"
+                android:visible="false" />
             <item
                 android:title="Добавить"
                 android:id="@+id/recipes_add"
@@ -25,12 +17,14 @@
         </menu>
     </item>
 
-    <item android:title="Продукты">
+    <item
+        android:title="Продукты"
+        android:visible="false">
         <menu>
             <item
-                android:title="Все продукты"
                 android:id="@+id/products_list"
-                android:icon="@drawable/ic_format_list_bulleted"/>
+                android:icon="@drawable/ic_format_list_bulleted"
+                android:title="Все продукты" />
         </menu>
     </item>
 

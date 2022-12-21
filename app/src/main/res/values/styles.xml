@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_main</item>
+        <item name="colorPrimaryDark">@color/color_main_dark</item>
+        <item name="colorAccent">@color/color_main_light</item>
+    </style>
 <!--  Buttons  -->
     <style name="input_layout_field" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="boxBackgroundColor">@color/white</item>
@@ -36,8 +42,8 @@
         <item name="android:maxLines">1</item>
     </style>
 
-    <style name="order_field_value" parent="default_text">
-        <item name="android:textSize">18sp</item>
+    <style name="field_value" parent="default_text">
+        <item name="android:textSize">16sp</item>
         <item name="android:paddingBottom">8dp</item>
     </style>
 
@@ -73,6 +79,13 @@
         <item name="android:padding">8dp</item>
     </style>
 
+    <style name="item_popup_text" parent="report_item_description">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
     <style name="report_item_input" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:textColor">@color/black_text</item>
         <item name="android:textSize">16sp</item>
@@ -81,5 +94,17 @@
         <item name="android:focusable">false</item>
         <item name="boxBackgroundColor">@color/white</item>
         <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="AppTheme.PopUpWindowTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 </resources>

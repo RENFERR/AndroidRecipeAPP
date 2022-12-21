@@ -6,14 +6,13 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.coursework.database.DatabaseProductCategoryRecipe.addRecipe
-import com.example.coursework.database.DatabaseProductCategoryRecipe.addRecipeStep
+import com.example.coursework.database.DatabaseRecipeMethods.addRecipe
+import com.example.coursework.database.DatabaseRecipeMethods.addRecipeStep
 import com.example.coursework.database.DatabaseProductsMethods.addRecipeProduct
 import com.example.coursework.database.MainBD
 import com.example.coursework.database.model.recipes.Recipe
@@ -36,7 +35,7 @@ class ActivityAddRecipe : AppCompatActivity() {
     private var pickedRecipeTypeID: Int? = null
     private val database by lazy { MainBD.getDb(this@ActivityAddRecipe) }
     private val adapterAddRecipeSteps by lazy { AdapterAddRecipeSteps() }
-    private val adapterAddRecipeProduct by lazy { AdapterAddRecipeProduct() }
+    private val adapterAddRecipeProduct by lazy { AdapterAddRecipeProduct(this@ActivityAddRecipe) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +46,7 @@ class ActivityAddRecipe : AppCompatActivity() {
     }
 
     private fun iniRecipe() {
-        database.getRecipeDao().getAllRecipeTypes()?.asLiveData()?.observe(this@ActivityAddRecipe) { recipeTypesList ->
+        database.getRecipeDao().getAllRecipeTypesFlow()?.asLiveData()?.observe(this@ActivityAddRecipe) { recipeTypesList ->
             AdapterSpinnerRecipeTypes(binding.spinnerProductType, recipeTypesList) {
                 pickedRecipeTypeID = it.recipeTypeID
             }.iniSpinner()

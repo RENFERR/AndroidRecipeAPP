@@ -3,7 +3,7 @@ package com.example.coursework.pages.admin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.coursework.database.DatabaseProductCategoryRecipe.addRecipeType
+import com.example.coursework.database.DatabaseRecipeMethods.addRecipeType
 import com.example.coursework.database.model.recipes.RecipeType
 import com.example.coursework.databinding.ActivityAdminRecipesCategoryBinding
 

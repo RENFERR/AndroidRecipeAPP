@@ -125,7 +125,7 @@
                     android:id="@+id/recyclerViewRecipeSteps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/item_recipe_step" />
+                    tools:listitem="@layout/item_fillable_recipe_step" />
             </RelativeLayout>
 
         </LinearLayout>

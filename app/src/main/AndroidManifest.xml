@@ -17,76 +17,80 @@
         android:theme="@style/Theme.CourseWork"
         tools:targetApi="31">
         <activity
-            android:name=".pages.admin.ActivityAdminRecipesCategory"
-            android:exported="false"
-            android:screenOrientation="portrait" >
+            android:name=".pages.recipes.ActivityRecipeInfo"
+            android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".pages.popaps.PopupRecipeTypeInfo"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.PopUpWindowTheme" />
+        <activity
+            android:name=".pages.admin.ActivityAdminRecipesCategory"
+            android:exported="false"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.admin.ActivityAdminProductsCategory"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.admin.ActivityAdminProducts"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.products.ActivityProductsList"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.recipes.ActivityAddRecipe"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.recipes.ActivityRecipesList"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".pages.account.ActivityUserProfile"
-            android:exported="false"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.authorization.RegistrationActivity"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
-            android:name=".pages.HomeActivity"
+            android:name=".pages.home.HomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pages.HomeActivity" />
+                android:value=".pages.home.HomeActivity" />
         </activity>
         <activity
             android:name=".pages.authorization.LoginActivity"

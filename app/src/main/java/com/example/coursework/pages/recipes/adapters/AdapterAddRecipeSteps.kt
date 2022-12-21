@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coursework.R
 import com.example.coursework.database.model.recipes.RecipeStep
-import com.example.coursework.databinding.ItemRecipeStepBinding
+import com.example.coursework.databinding.ItemFillableRecipeStepBinding
 import com.example.coursework.helpers.SimpleTextWatcher
 
 class AdapterAddRecipeSteps: RecyclerView.Adapter<AdapterAddRecipeSteps.ViewHolder>() {
 
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
-        private val binding = ItemRecipeStepBinding.bind(item)
+        private val binding = ItemFillableRecipeStepBinding.bind(item)
 
         fun bind(recipeStep: RecipeStep) = with(binding) {
             setTextListener(recipeStep)
@@ -53,7 +53,7 @@ class AdapterAddRecipeSteps: RecyclerView.Adapter<AdapterAddRecipeSteps.ViewHold
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_recipe_step, viewGroup, false)
+        val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_fillable_recipe_step, viewGroup, false)
         return ViewHolder(view)
     }
 
